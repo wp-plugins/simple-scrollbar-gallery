@@ -2,7 +2,7 @@
 Contributors: Thomas Schmidt, netAction
 Tags: gallery, images, image, javascript, jquery, pictures, photos, scroll, scrollbar, slide, slideshow
 Requires at least: 2.6
-Tested up to: 2.9.2
+Tested up to: 3.0
 Stable tag: trunk
 
 simple scrollbar gallery for WordPress is an image gallery as a WordPress plugin.
@@ -13,11 +13,9 @@ The plugin uses jQuery, and if your site doesn't already use jQuery, it'll add t
 
 == Description ==
 
-This plugin shows a medium size image in the page and below a row of thumbnails with a scrollbar. You can scroll the thumbs and choose an image for the big view.
+This simple plugin shows a large size image in the page and below the image a scrollable row of thumbnails without scrollbar. You can scroll the thumbs while mouseover and choose an image for the big view.
 
 Inspired by many other scripts.
-
-Important Links:
 
 == Installation ==
 
@@ -29,21 +27,15 @@ Important Links:
 = What images appear in the carousel =
 Simple attach the images you wish to appear in the carousel to the page or post where you will place the shortcode [gallery].
 
-= How do I change the layout =
+= How do I change the design =
 You can use CSS to change the look and feel of the layout. You can also create custom images for the next and prev arrows.
 
 = How do I change the image and thumbnail sizes =
-Carousel Gallery uses the Wordpress Media settings for this (Settings -> Media).
+Carousel Gallery uses the Wordpress Media settings for this (Settings -> Media Library).
 
-
-
-== Screenshots ==
-
-1. This shows the default look of the carousel.
-
-2. This shows a customized carousel.
 
 == Changelog ==
 
 * 0.1: First release June 2010
+* 0.2: Some fixes June 2010
 

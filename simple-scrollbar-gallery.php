@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: simple scrollbar gallery
-Version: 0.1
+Version: 0.2
 Description: Replaces the builtin [gallery] with a simple jQuery script. Still integrated in the page without any popups.
 Author: Thomas Schmidt
 Author URI:http://www.netaction.de/
@@ -42,17 +42,26 @@ function simple_scrollbar_gallery_header() {
 	* Initialize
 	*/
 	echo "<script type='text/javascript'>
+	var active,element,mouseY;
+	function scroller() {
+		var x = (mouseX - element.offset().left) / element.width() - 0.5;
+		element.scrollLeft(element.scrollLeft()+x*20);
+	}
 	$(function() {
+		$().mousemove( function(e) { mouseX = e.pageX; });
 		$('.gallery .gallery-list').css('white-space','nowrap').css('overflow','hidden');
-		$('.gallery .gallery-list a').mouseover(function(e) {  // load big image
+		$('.gallery .gallery-list a').mouseover(function() {  // load big image
 			$(this).parent().parent().children(':first').attr('src',$(this).attr('href'));
 		});
 		$('.gallery .gallery-list a').click(function() {  // disable mouseclick
 			return false;
 		});
-		$('.gallery .gallery-list').mousemove(function(e) {  // scroll
-			var x = (e.pageX - $(this).offset().left) / $(this).width() - 0.5;
-			$(this).scrollLeft($(this).scrollLeft()+x*30);
+		$('.gallery .gallery-list').mouseenter(function() {  // start scrolling
+			element=$(this);
+			active=setInterval('scroller()', 30);
+		});
+		$('.gallery .gallery-list').mouseleave(function() {  // stop scrolling
+			clearInterval(active);
 		});
 	});
 </script>
@@ -104,14 +113,14 @@ function simple_scrollbar_gallery($output, $attr) {
 	/**
 	* first big image
 	*/
-	$output .= "	".wp_get_attachment_image(key($attachments),"medium")."\n";
+	$output .= "	".wp_get_attachment_image(key($attachments),"large")."\n";
 
 	/**
 	* thumbnails
 	*/
 	$output .= "	<div class='gallery-list'>\n";
 	foreach ( $attachments as $id => $attachment ) {
-		$big_image = wp_get_attachment_image_src($id, 'medium'); // url of big image
+		$big_image = wp_get_attachment_image_src($id, 'large'); // url of big image
 //		$thumbnail_image = wp_get_attachment_image_src($id,"thumbnail"); // url of thumbnail
 		$output .= "		<a href=\"".$big_image[0]."\">\n";
 		$output .= "				".wp_get_attachment_image($id,"thumbnail")."\n";
