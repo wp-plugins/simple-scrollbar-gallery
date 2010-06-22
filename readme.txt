@@ -13,7 +13,7 @@ The plugin uses jQuery, and if your site doesn't already use jQuery, it'll add t
 
 == Description ==
 
-This simple plugin shows a large size image in the page and below the image a scrollable row of thumbnails without scrollbar. You can scroll the thumbs while mouseover and choose an image for the big view.
+This simple plugin shows a large size image in the page and below a scrollable row of thumbnails without scrollbar. You can scroll the thumbs while mouseover and choose an image for the big view.
 
 Inspired by many other scripts.
 
@@ -24,8 +24,8 @@ Inspired by many other scripts.
 
 == Frequently Asked Questions ==
 
-= What images appear in the carousel =
-Simple attach the images you wish to appear in the carousel to the page or post where you will place the shortcode [gallery].
+= What images appear in the gallery =
+Simple attach the images you wish to appear in the gallery to the page or post where you will place the shortcode [gallery].
 
 = How do I change the design =
 You can use CSS to change the look and feel of the layout. You can also create custom images for the next and prev arrows.
@@ -38,4 +38,4 @@ Carousel Gallery uses the Wordpress Media settings for this (Settings -> Media L
 
 * 0.1: First release June 2010
 * 0.2: Some fixes June 2010
-
+* 1.0 Minor fixes

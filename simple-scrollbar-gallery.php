@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: simple scrollbar gallery
-Version: 0.2
+Version: 1.0
 Description: Replaces the builtin [gallery] with a simple jQuery script. Still integrated in the page without any popups.
 Author: Thomas Schmidt
 Author URI:http://www.netaction.de/
@@ -27,7 +27,7 @@ function simple_scrollbar_gallery_enqueue_scripts() {
 
 	// jquery
 	wp_deregister_script('jquery');
-	wp_register_script('jquery', ($plugin_url  . '/jquery-1.3.2.min.js'), false, '1.3.2');
+	wp_register_script('jquery', ($plugin_url  . '/jquery-1.4.2.min.js'), false, '1.4.2');
 	wp_enqueue_script('jquery');
 }
 
@@ -45,7 +45,7 @@ function simple_scrollbar_gallery_header() {
 	var active,element,mouseY;
 	function scroller() {
 		var x = (mouseX - element.offset().left) / element.width() - 0.5;
-		element.scrollLeft(element.scrollLeft()+x*20);
+		element.scrollLeft(element.scrollLeft()+Math.round(x*x*x*60));
 	}
 	$(function() {
 		$().mousemove( function(e) { mouseX = e.pageX; });
@@ -58,7 +58,7 @@ function simple_scrollbar_gallery_header() {
 		});
 		$('.gallery .gallery-list').mouseenter(function() {  // start scrolling
 			element=$(this);
-			active=setInterval('scroller()', 30);
+			active=setInterval('scroller()', 20);
 		});
 		$('.gallery .gallery-list').mouseleave(function() {  // stop scrolling
 			clearInterval(active);
