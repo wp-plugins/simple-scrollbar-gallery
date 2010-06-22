@@ -143,4 +143,3 @@ function simple_scrollbar_gallery($output, $attr) {
 }
 
 ?>
-
