@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: simple scrollbar gallery
-Version: 1.0
+Version: 1.1
 Description: Replaces the builtin [gallery] with a simple jQuery script. Still integrated in the page without any popups.
 Author: Thomas Schmidt
 Author URI:http://www.netaction.de/
@@ -42,10 +42,12 @@ function simple_scrollbar_gallery_header() {
 	* Initialize
 	*/
 	echo "<script type='text/javascript'>
-	var active,element,mouseY;
+	var active,element,mouseX;
 	function scroller() {
 		var x = (mouseX - element.offset().left) / element.width() - 0.5;
-		element.scrollLeft(element.scrollLeft()+Math.round(x*x*x*60));
+		x=Math.round(x*x*x*60);
+		$('#contactlink').text(x);
+		element.scrollLeft(element.scrollLeft()+x);
 	}
 	$(function() {
 		$().mousemove( function(e) { mouseX = e.pageX; });
@@ -139,3 +141,4 @@ function simple_scrollbar_gallery($output, $attr) {
 }
 
 ?>
+
