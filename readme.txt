@@ -39,4 +39,4 @@ Carousel Gallery uses the Wordpress Media settings for this (Settings -> Media L
 * 0.1: First release June 2010
 * 0.2: Some fixes June 2010
 * 1.0 Minor fixes
-* 1.3 Fix
+* 1.4 Fix
