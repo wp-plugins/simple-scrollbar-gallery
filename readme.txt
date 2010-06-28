@@ -47,4 +47,4 @@ Usually you want the gallery to have the full width of your site. If you make th
 * 0.1: First release June 2010
 * 0.2: Some fixes June 2010
 * 1.0 Minor fixes
-* 1.5 Fix
+* 1.6 Fix
