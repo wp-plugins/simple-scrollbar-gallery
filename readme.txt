@@ -21,6 +21,11 @@ Inspired by many other scripts.
 
 1. Unpack the plugin, put it in your "plugins" folder (`/wp-content/plugins/`).
 2. Activate the plugin from the Plugins section.
+3. Now you need all images of your gallery in the same size.
+
+== Create Images ==
+
+You need all images of your gallery in the same size and have to upload them in the same aspect ratio. Maybe you have landscape and portait photos and want a square gallery. Then you have to scale the images and compose a border around them. Landscape images get a top and bottom border, portraits right and left. With imagemagick you can create a gray image of the right dimensions and fit all images over it: `$ for file in *; do composite -gravity center $file background.png $file; done`
 
 == Frequently Asked Questions ==
 
@@ -33,10 +38,13 @@ You can use CSS to change the look and feel of the layout. You can also create c
 = How do I change the image and thumbnail sizes =
 Carousel Gallery uses the Wordpress Media settings for this (Settings -> Media Library).
 
+= Which size have the images in the gallery =
+Usually you want the gallery to have the full width of your site. If you make the images square or landscape depends on you. Portrait images are no good idea because the gallery will become too high. After choosing the right dimensions you have to scale all your images to the same aspect ration. See "Create Images" for more information.
+
 
 == Changelog ==
 
 * 0.1: First release June 2010
 * 0.2: Some fixes June 2010
 * 1.0 Minor fixes
-* 1.4 Fix
+* 1.5 Fix
