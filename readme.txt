@@ -42,9 +42,15 @@ Carousel Gallery uses the Wordpress Media settings for this (Settings -> Media L
 Usually you want the gallery to have the full width of your site. If you make the images square or landscape depends on you. Portrait images are no good idea because the gallery will become too high. After choosing the right dimensions you have to scale all your images to the same aspect ration. See "Create Images" for more information.
 
 
+== Screenshots ==
+
+1. The size of the big image is the size of the first in the gallery. You should have all images in the gallery in the same width and heigth to avoid scaling.
+2. When putting the mouse over the thumbnails they will scroll smoothly. You can go left and right by moving the mouse cursor.
+
 == Changelog ==
 
 * 0.1: First release June 2010
 * 0.2: Some fixes June 2010
 * 1.0 Minor fixes
-* 1.6 Fix
+* 1.7 Screenshots
+
